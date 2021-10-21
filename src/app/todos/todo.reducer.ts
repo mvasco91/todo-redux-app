@@ -2,11 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { Todo } from './models/todo.model';
 import { createTodo, editTodo, toggle, deleteTodo, toggleAll, deleteTodosCompleted } from './todo.actions';
 
-export const initialState: Todo[] = [
-  new Todo('Save the world'),
-  new Todo('Kill Thanos'),
-  new Todo('Buy Ironman suit')
-];
+export const initialState: Todo[] = [];
 
 const _todoReducer = createReducer(initialState,
   on(createTodo, (state, {text}) => [...state, new Todo(text)]),
